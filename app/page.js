@@ -159,7 +159,7 @@ export default function Home() {
             className="object-cover"
             priority={i === 0}
           />
-          <div className="absolute inset-0 bg-[rgba(24,29,56,0.7)] flex items-center">
+          <div className="absolute inset-0 bg-[rgba(24,29,56,0.7)] dark:bg-black flex items-center">
             <div className="container mx-auto px-4 md:px-10">
               <div className="max-w-2xl">
                 <motion.h5

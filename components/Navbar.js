@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
@@ -7,6 +7,28 @@ import Image from 'next/image';
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Load dark mode preference from localStorage on mount
+  useEffect(() => {
+    const storedMode = localStorage.getItem('darkMode');
+    if (storedMode === 'true') {
+      setDarkMode(true);
+      document.body.classList.add('dark');
+    }
+  }, []);
+
+  // Toggle dark mode and save preference
+  const handleDarkModeToggle = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    localStorage.setItem('darkMode', newMode);
+    if (newMode) {
+      document.body.classList.add('dark');
+    } else {
+        document.body.classList.remove('dark');
+    }
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white text-dark shadow">
@@ -18,6 +40,14 @@ export default function Navbar() {
             Safe Harbor<span className="text-[#fb873f]"> learning</span>
           </p>
         </Link>
+
+        {/* Dark Mode Button */}
+        <button
+          onClick={handleDarkModeToggle}
+          className="ml-4 border-2 border-[#fb873f] text-[#fb873f] px-2 py-1 rounded transition-colors hover:bg-[#fb873f] hover:text-white"
+        >
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
 
         {/* Mobile Menu Button */}
         <button
