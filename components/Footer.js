@@ -1,4 +1,6 @@
 'use client';
+
+import Link from 'next/link';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaTwitter, FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 
 export default function Footer() {
@@ -66,7 +68,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="border-t border-gray-700 py-6 text-center text-sm text-gray-400">
-        &copy; <a href="/" className="text-white underline hover:no-underline">Safe Harbor Learning</a>, All Rights Reserved.
+        &copy; <Link href="/" className="text-white underline hover:no-underline">Safe Harbor Learning</Link>, All Rights Reserved.
       </div>
     </footer>
 
