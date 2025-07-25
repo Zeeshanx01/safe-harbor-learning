@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 const about = () => {
   return (    <>
       {/* Page Header */}
@@ -9,7 +9,7 @@ const about = () => {
           <nav className="text-sm">
             <ol className="flex justify-center space-x-2">
               <li>
-                <a href="/" className="hover:underline text-white">Home</a>
+                <Link href="/" className="hover:underline text-white">Home</Link>
               </li>
               <li>/</li>
               <li className="text-white">About</li>
@@ -29,7 +29,7 @@ const about = () => {
               At Cyber Courses, we believe in accessible, innovative learning experiences that adapt to your schedule and learning style. Join us in embracing the future of education and unlock your potential.
             </p>
             <p>
-              Welcome to Cyber Courses, where learning knows no boundaries. Our mission is to empower individuals worldwide through accessible and innovative education. Here's what sets us apart:
+              Welcome to Cyber Courses, where learning knows no boundaries. Our mission is to empower individuals worldwide through accessible and innovative education. Here&apos;s what sets us apart:
             </p>
           </div>
 
@@ -57,14 +57,14 @@ const about = () => {
           <div>
             <h3 className="text-2xl font-semibold text-orange-400 mb-2">Innovation in Learning</h3>
             <p>
-              Embracing technology, we offer innovative learning methods and tools. From interactive modules to live sessions, we're committed to providing a cutting-edge learning experience that fosters engagement and knowledge retention.
+              Embracing technology, we offer innovative learning methods and tools. From interactive modules to live sessions, we&apos;re committed to providing a cutting-edge learning experience that fosters engagement and knowledge retention.
             </p>
           </div>
 
           <div>
             <h3 className="text-2xl font-semibold text-orange-400 mb-2">Community-Centric Approach</h3>
             <p>
-              Cyber is more than just courses; it's a vibrant community. We encourage collaboration, discussion, and knowledge sharing among learners, fostering an environment of growth and camaraderie.
+              Cyber is more than just courses; it&apos;s a vibrant community. We encourage collaboration, discussion, and knowledge sharing among learners, fostering an environment of growth and camaraderie.
             </p>
           </div>
 
@@ -83,7 +83,7 @@ const about = () => {
           </div>
 
           <p className="mt-10">
-            Thank you for being a part of Cyber Courses. Together let's embark on a journey of lifelong learning and growth.
+            Thank you for being a part of Cyber Courses. Together let&apos;s embark on a journey of lifelong learning and growth.
           </p>
 
         </div>

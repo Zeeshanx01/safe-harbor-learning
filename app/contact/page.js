@@ -13,7 +13,7 @@ const ContactPage = () => {
           <div>
             <h5 className="text-lg font-semibold mb-4">Get In Touch</h5>
             <p className="text-gray-600 mb-6">
-              I'm happy to help! If you're looking for contact information or details about Safe Harbor learning online free courses website for e-learning, I don't have real-time browsing capabilities to access current websites or specific contact details.
+              I&apos;m happy to help! If you&apos;re looking for contact information or details about Safe Harbor learning online free courses website for e-learning, I don&apos;t have real-time browsing capabilities to access current websites or specific contact details.
             </p>
 
             <div className="flex items-start gap-4 mb-6">

@@ -56,7 +56,7 @@ const LoginPage = () => {
               Login
             </button>
             <p className="text-center text-sm">
-              Don't have an account?{' '}
+              Don&apos;t have an account?{' '}
               <Link href="/signup" className="text-[#fb873f] hover:underline">
                 Signup
               </Link>

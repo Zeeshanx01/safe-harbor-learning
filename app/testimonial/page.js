@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const testimonials = [
   {
@@ -108,7 +109,7 @@ export default function TestimonialsPage() {
           </div>
         </div>
         <div className="text-center text-sm mt-8 border-t pt-4">
-          &copy; {new Date().getFullYear()} <a href="/" className="text-[#fb873f] font-semibold">Safe Harbor learning</a>. All rights reserved.
+          &copy; {new Date().getFullYear()} <Link href="/" className="text-[#fb873f] font-semibold">Safe Harbor learning</Link>. All rights reserved.
         </div>
       </footer>
     </main>

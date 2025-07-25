@@ -305,13 +305,13 @@ export default function Home() {
             <h6 className="text-sm font-semibold uppercase text-orange-400 mb-2">About Us</h6>
             <h1 className="text-4xl font-bold mb-4 text-[#fb873f]">Welcome to Cyber Courses</h1>
             <p className="text-gray-300 mb-4">
-              At Cyber Course Academy, we're dedicated to empowering individuals and
+              At Cyber Course Academy, we&apos;re dedicated to empowering individuals and
               organizations to navigate the complex world of cybersecurity. Our team of experienced
               professionals is passionate about providing high-quality training and education to help others
               protect themselves from ever-evolving cyber threats.
             </p>
             <p className="text-gray-300 mb-6">
-              Welcome to Cyber Courses, your gateway to boundless learning opportunities. We're
+              Welcome to Cyber Courses, your gateway to boundless learning opportunities. We&apos;re
               dedicated to democratizing education, offering a diverse range of courses taught by industry
               experts. Our mission is to empower learners worldwide, fostering a community-driven platform
               where knowledge knows no limits.

@@ -232,7 +232,7 @@ function ReadyToJoinSection({ setIsModalOpen }) {
 
         <div className="lg:w-1/2">
           <h1 className="text-3xl font-bold text-[#fb873f] mb-4">Ready to Join Us?</h1>
-          <p className="text-gray-600 mb-6">Here's How to Get Started</p>
+          <p className="text-gray-600 mb-6">Here&apos;s How to Get Started</p>
 
           <ul className="space-y-3 mb-8">
             <li className="flex items-start">
@@ -270,7 +270,7 @@ function FinalCallToAction() {
         </h5>
         <p className="text-gray-700">
           At Harbor learning, we believe that education has the power to transform lives. Join us in creating a world
-          where knowledge knows no bounds and together let's inspire, innovate, and educate!
+          where knowledge knows no bounds and together let&apos;s inspire, innovate, and educate!
         </p>
       </div>
     </div>
