@@ -191,18 +191,27 @@ export default function Footer() {
 
       {/* Copyright */}
       <motion.div 
-        className="border-t border-white/10 py-8 text-center"
+        className="border-t border-white/10 py-8 text-center relative z-20"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 relative z-20">
           <p className="text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} <Link href="/" className="text-white font-medium hover:text-orange-500 transition">Safe Harbor Learning</Link>. All Rights Reserved.
           </p>
-          <p className="text-gray-500 text-xs mt-2">
-            Designed with ❤️ for cybersecurity education
+          <p className="text-gray-500 text-xs mt-2 relative z-20">
+            Designed with ❤️ by {' '}
+            <a 
+              href="https://zeeshanx01.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-orange-400 hover:text-white transition-colors font-medium underline underline-offset-2"
+            >
+              Zeeshan
+            </a>{' '}
+            for cybersecurity education
           </p>
         </div>
       </motion.div>

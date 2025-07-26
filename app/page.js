@@ -283,7 +283,7 @@ export default function Home() {
               Welcome to Cyber Courses
             </h1>
             <p className="text-gray-700 dark:text-gray-300 mb-5 text-lg">
-              At Cyber Course Academy, we're dedicated to empowering individuals and
+              At Cyber Course Academy, we&apos;re dedicated to empowering individuals and
               organizations to navigate the complex world of cybersecurity.
             </p>
             <p className="text-gray-700 dark:text-gray-300 mb-8 text-lg">
