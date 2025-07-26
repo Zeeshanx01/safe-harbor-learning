@@ -1,15 +1,15 @@
 'use client'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { FaArrowRight } from 'react-icons/fa'
+import { FaArrowRight, FaChalkboardTeacher, FaGraduationCap, FaLaptopCode, FaShieldAlt } from 'react-icons/fa'
 import Courses from '@/components/Courses'
 
 const slides = [
   {
     image: '/img/bck.jpeg',
     subHeading: 'Best E-learning platform',
-    heading: "Your Trust Partner's",
+    heading: "Your Trusted Partner",
     text: 'Join a vibrant community dedicated to protecting digital assets and advancing your career in cyber security. Start learning today to stay ahead in this critical field.',
   },
   {
@@ -20,47 +20,32 @@ const slides = [
   },
 ]
 
-
-
 const features = [
   {
-    icon: '/img/icon1.png',
+    icon: <FaGraduationCap className="w-12 h-12 text-indigo-500" />,
     title: 'Learn anything',
-    description: 'Explore any interest or trending topic, take advance your skills',
+    description: 'Explore any interest or trending topic, advance your skills',
     delay: 0.1,
   },
   {
-    icon: '/img/icon2.png',
+    icon: <FaShieldAlt className="w-12 h-12 text-orange-500" />,
     title: 'Save money',
-    description: 'Spend less money on your learning if you plan to take multiple courses this year',
+    description: 'Spend less while accessing premium cybersecurity content',
     delay: 0.3,
   },
   {
-    icon: '/img/icon3.png',
+    icon: <FaLaptopCode className="w-12 h-12 text-teal-500" />,
     title: 'Flexible learning',
-    description: 'Learn at your own place, move between multiple courses or switch to a different course',
+    description: 'Learn at your own pace, switch between multiple courses',
     delay: 0.5,
   },
   {
-    icon: '/img/icon4.png',
+    icon: <FaGraduationCap className="w-12 h-12 text-purple-500" />,
     title: 'Unlimited certificates',
-    description: 'Earn certificate for every learning program you complete at additional cost',
+    description: 'Earn certificates for every completed learning program',
     delay: 0.7,
   },
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const faqs = [
   {
@@ -70,87 +55,67 @@ const faqs = [
   },
   {
     question:
-      'Why should I choose Great Learning Academy for free courses with certificates?',
+      'Why should I choose Cyber Courses for cybersecurity training?',
     answer:
-      'Great Learning Academy is an excellent choice for free courses with certificates because of the high quality of the learning content. The courses are well-crafted, offer a great learning experience, and are interactive and engaging, making them ideal for learners in identifying what works best for their career goals.',
+      'Our platform offers industry-leading cybersecurity courses crafted by experts with real-world experience. The content is constantly updated to reflect the latest threats and defense strategies, ensuring you gain relevant, practical skills.',
   },
   {
-    question: 'How many free courses can I enroll in at the same time?',
+    question: 'How many courses can I enroll in simultaneously?',
     answer:
-      'You can simultaneously enroll in multiple courses at Cyber Security.',
+      'You can enroll in multiple courses at the same time and switch between them based on your learning goals and schedule.',
   },
   {
-    question: 'How can I enroll in these free online courses?',
+    question: 'How do I enroll in these courses?',
     answer:
-      'You can click on the “Sign Up” button at the top-right of the page and register with your email address, or you can sign up using your Google Account.',
+      'Simply create an account, browse our catalog, and enroll with one click. Start learning immediately after enrollment.',
   },
   {
-    question: 'What are the most popular free courses offered by Cyber Security?',
+    question: 'What are your most popular cybersecurity courses?',
     answer: (
       <div>
         <p>
-          Cyber Course is based on in-demand concepts and skills, where learners
-          can develop industry-relevant knowledge in their chosen sector. It
-          provides a wide range of courses in prestigious fields, assisting
-          learners across the globe in achieving their professional goals.
+          Our curriculum focuses on in-demand cybersecurity skills, helping learners develop industry-relevant knowledge. Some of our most popular courses include:
         </p>
-        <p className="mt-2">Some of the most popular free courses offered by Cyber Security that are in high demand today include:</p>
         <ul className="list-disc list-inside mt-2 space-y-1">
-          <li>Cybersecurity Awareness</li>
-          <li>Cybersecurity Social Engineering</li>
-          <li>Ethical Hacking</li>
-          <li>Penetration Testing</li>
+          <li>Cybersecurity Fundamentals</li>
+          <li>Ethical Hacking & Penetration Testing</li>
+          <li>Cloud Security Architecture</li>
+          <li>Incident Response & Threat Hunting</li>
         </ul>
       </div>
     ),
   },
 ]
 
-
-
-
-
-
-
-
-
-
-
-
 export default function Home() {
-
   const [current, setCurrent] = useState(0)
   const [activeIndex, setActiveIndex] = useState(0)
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length)
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length)
 
-
-
-
-
   const toggleAccordion = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? -1 : index))
   }
 
-
-
-
+  // Auto-advance slides
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 7000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (<>
-
-
-
-
-
-    <section className="relative w-full h-screen overflow-hidden">
+    {/* Hero Section with Glass Effect */}
+    <section className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-gray-900 to-black">
       {slides.map((slide, i) => (
         <motion.div
           key={i}
           initial={{ opacity: 0 }}
-          animate={{ opacity: i === current ? 1 : 0 }}
-          transition={{ duration: 0.8 }}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${i === current ? 'z-10' : 'z-0'
-            }`}
+          animate={{ 
+            opacity: i === current ? 1 : 0,
+            scale: i === current ? 1 : 1.05
+          }}
+          transition={{ duration: 1.2 }}
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${i === current ? 'z-10' : 'z-0'}`}
         >
           <Image
             src={slide.image}
@@ -159,14 +124,14 @@ export default function Home() {
             className="object-cover"
             priority={i === 0}
           />
-          <div className="absolute inset-0 bg-[rgba(24,29,56,0.7)] dark:bg-black flex items-center">
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-indigo-900/50 dark:from-black/80 dark:to-indigo-900/30 flex items-center">
             <div className="container mx-auto px-4 md:px-10">
-              <div className="max-w-2xl">
+              <div className="max-w-2xl backdrop-blur-sm bg-white/5 dark:bg-black/20 p-8 rounded-2xl border border-white/10 shadow-2xl">
                 <motion.h5
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="uppercase text-orange-400 text-lg mb-3"
+                  className="uppercase text-orange-400 text-lg mb-3 font-semibold tracking-wider"
                 >
                   {slide.subHeading}
                 </motion.h5>
@@ -174,7 +139,7 @@ export default function Home() {
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="text-white text-4xl md:text-5xl font-bold mb-4"
+                  className="text-white text-4xl md:text-5xl font-bold mb-4 leading-tight"
                 >
                   {slide.heading}
                 </motion.h1>
@@ -182,7 +147,7 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.7 }}
-                  className="text-white mb-6"
+                  className="text-gray-200 mb-6 text-lg max-w-xl"
                 >
                   {slide.text}
                 </motion.p>
@@ -192,18 +157,22 @@ export default function Home() {
                   transition={{ delay: 0.9 }}
                   className="flex gap-4"
                 >
-                  <a
+                  <motion.a
                     href="/about"
-                    className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all shadow-md"
                   >
                     Read More
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
                     href="/signup"
-                    className="bg-white text-black px-6 py-3 rounded hover:bg-gray-200 transition"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all shadow-md"
                   >
                     Join Now
-                  </a>
+                  </motion.a>
                 </motion.div>
               </div>
             </div>
@@ -211,277 +180,297 @@ export default function Home() {
         </motion.div>
       ))}
 
-      {/* Navigation Arrows (optional) */}
+      {/* Navigation Arrows */}
       <div className="absolute left-4 bottom-10 z-20 flex gap-4">
-        <button onClick={prevSlide} className="text-white text-xl">⬅</button>
-        <button onClick={nextSlide} className="text-white text-xl">➡</button>
+        <motion.button 
+          onClick={prevSlide} 
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          className="bg-white/20 dark:bg-black/30 backdrop-blur-sm p-2 rounded-full border border-white/30"
+        >
+          <span className="text-white text-xl">⬅</span>
+        </motion.button>
+        <motion.button 
+          onClick={nextSlide}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          className="bg-white/20 dark:bg-black/30 backdrop-blur-sm p-2 rounded-full border border-white/30"
+        >
+          <span className="text-white text-xl">➡</span>
+        </motion.button>
       </div>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-    <section className="py-16 bg-white dark:bg-[#0d0d0d] text-gray-800 dark:text-gray-200">
+    {/* Features Section with Glass Cards */}
+    <section className="py-16 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
+        <div className="text-center mb-16">
           <motion.h1
-            className="text-3xl md:text-4xl font-bold mb-4 text-[#fb873f]"
+            className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-orange-500 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
           >
-            Invest in your professional goals with Cyber Courses
+            Invest in Your Cyber Future
           </motion.h1>
           <motion.p
-            className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+            className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
           >
-            Get unlimited access to over 90% of courses, Projects, Specializations, and Professional Certificates on courses, taught by top instructors.
+            Get unlimited access to our cybersecurity courses taught by industry experts and top instructors.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-white dark:bg-[#1a1a1a] shadow-md rounded-lg text-center p-6 hover:shadow-xl transition duration-300"
-              initial={{ opacity: 0, y: 20 }}
+              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 rounded-xl text-center p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: item.delay }}
               viewport={{ once: true }}
             >
-              <Image
-                src={item.icon}
-                alt={item.title}
-                width={60}
-                height={60}
-                className="mx-auto mb-4"
-              />
-              <h5 className="text-xl font-semibold mb-2">{item.title}</h5>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">{item.description}</p>
+              <motion.div 
+                className="mx-auto mb-6"
+                whileHover={{ rotate: 10, scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                {item.icon}
+              </motion.div>
+              <h5 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">{item.title}</h5>
+              <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-    <section className="py-16 px-4 md:px-0">
+    {/* About Section with Modern Layout */}
+    <section className="py-16 px-4 md:px-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          {/* Image Section */}
-          <div className="relative min-h-[400px]">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Image with floating animation */}
+          <motion.div 
+            className="relative min-h-[400px] rounded-2xl overflow-hidden shadow-2xl"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
             <Image
               src="/img/logo4.png"
               alt="About Us"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg"
+              fill
+              className="object-cover"
             />
-          </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          </motion.div>
 
-          {/* Content Section */}
-          <div>
-            <h6 className="text-sm font-semibold uppercase text-orange-400 mb-2">About Us</h6>
-            <h1 className="text-4xl font-bold mb-4 text-[#fb873f]">Welcome to Cyber Courses</h1>
-            <p className="text-gray-300 mb-4">
-              At Cyber Course Academy, we&apos;re dedicated to empowering individuals and
-              organizations to navigate the complex world of cybersecurity. Our team of experienced
-              professionals is passionate about providing high-quality training and education to help others
-              protect themselves from ever-evolving cyber threats.
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
+            <h6 className="text-sm font-semibold uppercase text-orange-500 mb-2 tracking-wider">About Us</h6>
+            <h1 className="text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-orange-500 bg-clip-text text-transparent">
+              Welcome to Cyber Courses
+            </h1>
+            <p className="text-gray-700 dark:text-gray-300 mb-5 text-lg">
+              At Cyber Course Academy, we're dedicated to empowering individuals and
+              organizations to navigate the complex world of cybersecurity.
             </p>
-            <p className="text-gray-300 mb-6">
-              Welcome to Cyber Courses, your gateway to boundless learning opportunities. We&apos;re
-              dedicated to democratizing education, offering a diverse range of courses taught by industry
-              experts. Our mission is to empower learners worldwide, fostering a community-driven platform
-              where knowledge knows no limits.
+            <p className="text-gray-700 dark:text-gray-300 mb-8 text-lg">
+              Our mission is to democratize cybersecurity education, offering cutting-edge courses 
+              taught by industry veterans to help you protect against evolving digital threats.
             </p>
 
             {/* Features List */}
-            <div className="grid sm:grid-cols-2 gap-4 text-gray-300 text-sm">
+            <div className="grid grid-cols-2 gap-4 text-gray-700 dark:text-gray-300 mb-8">
               {[
                 'Expert Instructors',
                 'Live Interactive Sessions',
                 'Comprehensive Course Catalog',
                 'Community Engagement',
                 'Personalized Learning Paths',
-                'Certification and Recognition'
+                'Industry Certifications'
               ].map((feature, i) => (
-                <p key={i} className="flex items-center gap-2">
-                  <FaArrowRight className="text-orange-400" />
+                <motion.p 
+                  key={i} 
+                  className="flex items-center gap-3"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * i }}
+                  viewport={{ once: true }}
+                >
+                  <span className="bg-indigo-500/10 dark:bg-indigo-500/20 p-2 rounded-full">
+                    <FaArrowRight className="text-indigo-500" />
+                  </span>
                   {feature}
-                </p>
+                </motion.p>
               ))}
             </div>
 
             {/* Button */}
-            <a
+            <motion.a
               href="/about"
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 mt-6 rounded transition"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 px-8 rounded-full font-medium shadow-lg hover:shadow-xl transition-all"
             >
-              Read More
-            </a>
-          </div>
+              Learn More
+            </motion.a>
+          </motion.div>
         </div>
       </div>
     </section>
 
-
-
-
-
-
-
-
-
-
-    <section className="py-16 bg-gray-100">
+    {/* CTA Section with Glass Effect */}
+    <section className="py-16 relative">
+      <div className="absolute inset-0 bg-[url('/img/grid.svg')] bg-center opacity-10 dark:opacity-5"></div>
       <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center px-4">
-        <div className="space-y-6 p-6">
-          <h1 className="text-4xl font-bold text-[#fb873f]">Explore Free Courses</h1>
-          <p className="text-gray-700">
-            Start your online learning journey at Great Learning Academy for free with our
-            short-term basic courses across various in-demand domains.
+        <motion.div 
+          className="space-y-6 p-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/30 shadow-xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-orange-500 bg-clip-text text-transparent">
+            Start Your Cyber Journey
+          </h1>
+          <p className="text-gray-700 dark:text-gray-300 text-lg">
+            Begin with our free introductory courses and build your cybersecurity skills from the ground up.
           </p>
-          <a
+          <motion.a
             href="/signup"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded transition"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block bg-gradient-to-r from-orange-500 to-amber-500 text-white py-3 px-8 rounded-full font-medium shadow-lg hover:shadow-xl transition-all"
           >
             Start For Free
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
 
-        <div className="relative h-[400px]">
+        <motion.div 
+          className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
           <Image
             src="/img/typing - Copy.png"
             alt="Free Courses"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg"
+            fill
+            className="object-cover"
           />
-        </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-orange-500/20"></div>
+        </motion.div>
       </div>
     </section>
 
+    {/* Courses Section */}
+    <Courses />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<Courses />
-
-
-
-
-
-
-
-
-
-
-
-    <section className="pb-5 bg-[url('/img/banner-3.jpg')] bg-cover bg-center">
-      <div className="container-xxl mt-10 px-4 mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left Image */}
-          <div className="min-h-[400px] relative">
-            <img
+    {/* Become Instructor Section */}
+    <section className="py-16 bg-gradient-to-r from-indigo-900/20 to-gray-900/30 dark:from-indigo-900/10 dark:to-gray-900/20">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/30 dark:border-gray-700/30 shadow-2xl">
+          {/* Image */}
+          <div className="min-h-[500px] relative">
+            <Image
               src="/img/cat-3.jpg"
               alt="Instructor"
-              className="absolute inset-0 w-full h-full object-cover bg-light"
+              fill
+              className="object-cover"
             />
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/40 to-gray-900/30"></div>
           </div>
 
-          {/* Right Content */}
-          <div className="p-5 flex flex-col justify-center">
-            <h1 className="mb-4 text-3xl md:text-4xl font-bold text-[#fb873f]">
+          {/* Content */}
+          <div className="p-8 lg:p-12">
+            <h1 className="mb-6 text-4xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
               Become an Instructor
             </h1>
-            <p className="mb-4 text-white">
-              Instructors from around the world teach millions of learners on Udemy. We provide
-              the tools and skills to teach what you love.
+            <p className="mb-6 text-gray-700 dark:text-gray-300 text-lg">
+              Share your cybersecurity expertise with millions of learners worldwide. 
+              We provide the platform and tools to help you create impactful courses.
             </p>
-            <a
-              href="/instructor.html"
-              className="btn bg-[#fb873f] text-white py-3 px-6 mt-2 w-max rounded hover:bg-[#e3732f] transition"
+            <motion.a
+              href="/instructor"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 px-8 rounded-full font-medium shadow-lg hover:shadow-xl transition-all"
             >
               Start Teaching Today
-            </a>
+              <FaChalkboardTeacher />
+            </motion.a>
           </div>
         </div>
       </div>
     </section>
 
-
-
-
-
-
-
-
-    <section className="py-12 bg-gray-100 dark:bg-gray-900">
+    {/* FAQ Section with Glass Cards */}
+    <section className="py-16 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
+        <div className="text-center mb-16">
+          <motion.h1
+            className="text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-orange-500 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             Frequently Asked Questions
-          </h1>
+          </motion.h1>
+          <motion.p
+            className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Find answers to common questions about our cybersecurity courses and platform.
+          </motion.p>
         </div>
-        <div className="max-w-3xl mx-auto space-y-4">
+        
+        <div className="max-w-3xl mx-auto space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="border border-gray-200 dark:border-gray-700 rounded-lg">
+            <motion.div 
+              key={index} 
+              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 rounded-xl overflow-hidden shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 * index }}
+              viewport={{ once: true }}
+            >
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full flex justify-between items-center p-4 text-left font-medium text-gray-800 dark:text-white bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none"
+                className="w-full flex justify-between items-center p-6 text-left font-semibold text-gray-800 dark:text-gray-100 hover:bg-gray-50/50 dark:hover:bg-gray-700/50 transition-colors"
               >
-                {faq.question}
-                <span>{activeIndex === index ? '−' : '+'}</span>
+                <span className="text-lg">{faq.question}</span>
+                <span className="text-xl">{activeIndex === index ? '−' : '+'}</span>
               </button>
               {activeIndex === index && (
-                <div className="p-4 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  className="px-6 pb-6 text-gray-700 dark:text-gray-300"
+                >
                   {faq.answer}
-                </div>
+                </motion.div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
-
-
-
-
-
-
-
-
   </>);
 }
