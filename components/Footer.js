@@ -1,26 +1,26 @@
 'use client';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { 
-  FaMapMarkerAlt, 
-  FaPhoneAlt, 
-  FaEnvelope, 
-  FaTwitter, 
-  FaFacebookF, 
-  FaYoutube, 
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaTwitter,
+  FaFacebookF,
+  FaYoutube,
   FaLinkedinIn,
   FaArrowRight
 } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-b from-gray-900 to-black pt-20 mt-20">
+    <footer className="relative bg-gradient-to-b dark:from-gray-900 from-slate-700 to-black pt-20 mt-20">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
-            animate={{ 
+            animate={{
               x: [0, 100 * (i % 2 === 0 ? 1 : -1), 0],
               y: [0, -100, 0],
               rotate: [0, 360]
@@ -41,7 +41,7 @@ export default function Footer() {
           />
         ))}
       </div>
-      
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo and Description */}
@@ -91,15 +91,15 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {['About Us', 'Contact Us', 'Privacy Policy', 'Terms & Conditions', 'FAQs & Help'].map((item, i) => (
-                <motion.li 
+                <motion.li
                   key={i}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 * i }}
                   viewport={{ once: true }}
                 >
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="flex items-center gap-3 text-gray-400 hover:text-white transition group"
                   >
                     <FaArrowRight className="text-orange-500 group-hover:translate-x-1 transition-transform" />
@@ -117,11 +117,11 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-white text-xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-orange-400 bg-clip-text text-transparent">
+            <h4 className="text-white text-xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-orange-400 bg-clip-text ">
               Contact Info
             </h4>
-            <ul className="space-y-4">
-              <motion.li 
+            <ul className="space-y-4 text-gray-400">
+              <motion.li
                 className="flex items-start gap-4"
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -131,7 +131,7 @@ export default function Footer() {
                 <FaMapMarkerAlt className="text-orange-500 mt-1 flex-shrink-0" />
                 <span>NCBA&E (East Canal Campus) Lahore</span>
               </motion.li>
-              <motion.li 
+              <motion.li
                 className="flex items-center gap-4"
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -141,7 +141,7 @@ export default function Footer() {
                 <FaPhoneAlt className="text-orange-500" />
                 <span>+93 3104715517</span>
               </motion.li>
-              <motion.li 
+              <motion.li
                 className="flex items-center gap-4"
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -161,7 +161,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-white text-xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-orange-400 bg-clip-text text-transparent">
+            <h4 className="text-white text-xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-orange-400 bg-clip-text ">
               Newsletter
             </h4>
             <p className="text-gray-400 mb-6">
@@ -190,7 +190,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <motion.div 
+      <motion.div
         className="border-t border-white/10 py-8 text-center relative z-20"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -203,9 +203,9 @@ export default function Footer() {
           </p>
           <p className="text-gray-500 text-xs mt-2 relative z-20">
             Designed with ❤️ by {' '}
-            <a 
-              href="https://zeeshanx01.vercel.app/" 
-              target="_blank" 
+            <a
+              href="https://zeeshanx01.vercel.app/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-orange-400 hover:text-white transition-colors font-medium underline underline-offset-2"
             >

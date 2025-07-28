@@ -32,13 +32,18 @@ export default function Navbar() {
       <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 lg:px-6 h-20">
         {/* Logo & Brand */}
         <Link href="/" className="flex items-center space-x-3">
-          <div className="relative w-12 h-12">
+          {/* <div className="relative w-12 h-12">
             <Image 
               src="/img/lock.png" 
               alt="Logo" 
               fill 
               className="object-contain"
             />
+          </div> */}
+          <div className="bg-gradient-to-r from-indigo-600 to-orange-500 p-2 rounded-lg">
+            <div className="bg-white dark:bg-gray-900 p-1 rounded">
+              <div className="w-10 h-10 bg-gray-200 rounded" />
+            </div>
           </div>
           <p className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-orange-500 bg-clip-text text-transparent">
             Safe Harbor<span className="text-orange-500"> Learning</span>
@@ -48,20 +53,20 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-5">
           {['Home', 'About', 'Courses'].map((item) => (
-            <Link 
-              key={item} 
+            <Link
+              key={item}
               href={`/${item.toLowerCase()}`}
               className="relative font-semibold text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             >
               {item}
-              <motion.span 
+              <motion.span
                 className="absolute left-0 -bottom-1 h-0.5 w-0 bg-indigo-600"
                 whileHover={{ width: '100%' }}
                 transition={{ duration: 0.3 }}
               />
             </Link>
           ))}
-          
+
           {/* Dropdown */}
           <div className="relative">
             <button
@@ -70,7 +75,7 @@ export default function Navbar() {
             >
               Pages <ChevronDown size={16} className={`transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
             </button>
-            
+
             <AnimatePresence>
               {dropdownOpen && (
                 <motion.div
@@ -97,9 +102,9 @@ export default function Navbar() {
               )}
             </AnimatePresence>
           </div>
-          
-          <Link 
-            href="/contact" 
+
+          <Link
+            href="/contact"
             className="font-semibold text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
           >
             Contact
@@ -142,7 +147,7 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>  
+          </motion.button>
         </div>
       </div>
 
@@ -157,7 +162,7 @@ export default function Navbar() {
             className="fixed top-20 right-0 w-72 h-[calc(100vh-5rem)] bg-white/95 dark:bg-gray-900/95 backdrop-blur-xs shadow-2xl lg:hidden z-40 p-6 overflow-y-auto border-l border-gray-200 dark:border-gray-800"
           >
             <div className="flex flex-col gap-4">
-              {[ 'About', 'Courses', 'Contact'].map((item) => (
+              {['About', 'Courses', 'Contact'].map((item) => (
                 <Link
                   key={item}
                   href={`/${item.toLowerCase()}`}
@@ -176,7 +181,7 @@ export default function Navbar() {
                   <span>Pages</span>
                   <ChevronDown size={20} className={`transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
-                
+
                 {dropdownOpen && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
@@ -200,7 +205,7 @@ export default function Navbar() {
                   </motion.div>
                 )}
               </div>
-              
+
               <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
                 <div id="google_translate_element" />
               </div>
