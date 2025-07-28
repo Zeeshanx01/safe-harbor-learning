@@ -138,11 +138,11 @@ export default function Navbar() {
           <motion.button
             onClick={() => setMenuOpen(!menuOpen)}
             whileTap={{ scale: 0.9 }}
-            className="lg:hidden p-2 rounded-full bg-white dark:bg-gray-500 shadow-lg border border-gray-200 dark:border-gray-700"
+            className="lg:hidden p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-indigo-700 dark:text-yellow-500 shadow-lg border border-gray-200 dark:border-gray-700"
             aria-label="Toggle menu"
           >
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
+          </motion.button>  
         </div>
       </div>
 
@@ -157,7 +157,7 @@ export default function Navbar() {
             className="fixed top-20 right-0 w-72 h-[calc(100vh-5rem)] bg-white/95 dark:bg-gray-900/95 backdrop-blur-xs shadow-2xl lg:hidden z-40 p-6 overflow-y-auto border-l border-gray-200 dark:border-gray-800"
           >
             <div className="flex flex-col gap-4">
-              {['Home', 'About', 'Courses', 'Contact'].map((item) => (
+              {[ 'About', 'Courses', 'Contact'].map((item) => (
                 <Link
                   key={item}
                   href={`/${item.toLowerCase()}`}
