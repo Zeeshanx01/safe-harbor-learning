@@ -122,7 +122,7 @@ const About = () => {
               At Cyber Courses, we believe in accessible, innovative learning experiences that adapt to your schedule and learning style. Join us in embracing the future of cybersecurity education and unlock your potential.
             </p>
             <p className="text-gray-700 dark:text-gray-300 text-lg">
-              We're on a mission to empower individuals worldwide through cutting-edge security education. In today's digital landscape, cybersecurity skills are not just valuable - they're essential for protecting our digital future.
+              We&apos;re on a mission to empower individuals worldwide through cutting-edge security education. In today&apos;s digital landscape, cybersecurity skills are not just valuable - they&apos;re essential for protecting our digital future.
             </p>
           </motion.div>
 
@@ -189,7 +189,7 @@ const About = () => {
             Thank you for being part of Cyber Courses
           </h3>
           <p className="text-white/90 max-w-3xl mx-auto text-lg">
-            Together let's embark on a journey of lifelong learning, growth, and creating a safer digital world for everyone.
+            Together let&apos;s embark on a journey of lifelong learning, growth, and creating a safer digital world for everyone.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
