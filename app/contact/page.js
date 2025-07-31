@@ -8,7 +8,8 @@ const ContactPage = () => {
   return (
     <>
       {/* Hero Section with Glass Effect */}
-      <div className="relative py-28 mb-16 text-center overflow-hidden">
+
+      <div className="relative py-28 mb-16 text-black/30 bg-gray-300 dark:bg-black/5 text-center overflow-hidden">
         {/* Animated background */}
         <div className="absolute inset-0 overflow-hidden z-0">
           {[...Array(5)].map((_, i) => (
@@ -35,7 +36,7 @@ const ContactPage = () => {
             />
           ))}
         </div>
-        
+
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <motion.h1
             className="text-4xl md:text-5xl font-bold mb-6"
@@ -43,28 +44,31 @@ const ContactPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="bg-gradient-to-r from-indigo-500 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-500 to-orange-500 dark:from-indigo-400 dark:to-orange-400 bg-clip-text text-transparent">
               Contact Us
             </span>
           </motion.h1>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <nav className="flex justify-center items-center text-sm bg-white/10 dark:bg-black/20 backdrop-blur-sm border border-white/10 dark:border-gray-700/30 rounded-full py-2 px-6 max-w-xs mx-auto">
-              <ol className="flex space-x-2 text-gray-800 dark:text-gray-200">
+            <nav className="flex justify-center items-center text-sm bg-white/10 backdrop-blur-sm border border-white/10 rounded-full py-2 px-6 max-w-xs mx-auto">
+              <ol className="flex space-x-2 text-black/90 dark:text-white">
                 <li>
                   <Link href="/" className="hover:underline">Home</Link>
                 </li>
                 <li className="text-orange-400">/</li>
-                <li className="font-medium">Contact</li>
+                <li className=" font-medium">Contact</li>
               </ol>
             </nav>
           </motion.div>
         </div>
       </div>
+
+
+
 
       {/* Contact Content */}
       <section className="max-w-6xl mx-auto px-4 py-10">

@@ -124,7 +124,7 @@ export default function Home() {
             className="object-cover"
             priority={i === 0}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-indigo-900/50 dark:from-black/80 dark:to-indigo-900/30 flex items-center">
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-700/90 to-indigo-700/30 dark:from-gray-900/80 dark:to-indigo-700/30 flex items-center">
             <div className="container mx-auto px-4 md:px-10">
               <div className="max-w-2xl backdrop-blur-sm bg-white/5 dark:bg-black/20 p-8 rounded-2xl border border-white/10 shadow-2xl">
                 <motion.h5
