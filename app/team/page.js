@@ -197,7 +197,7 @@ export default function TeamPage() {
           Join Our Cybersecurity Team
         </h3>
         <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-          We're always looking for passionate cybersecurity professionals to join our team of educators and experts.
+          We&apos;re always looking for passionate cybersecurity professionals to join our team of educators and experts.
         </p>
         <motion.button
           whileHover={{ scale: 1.05 }}
