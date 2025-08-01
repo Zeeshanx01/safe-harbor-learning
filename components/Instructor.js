@@ -165,10 +165,15 @@ function WhyChooseSection() {
       transition={{ duration: 0.6 }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
-          <div className="absolute inset-0 bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" />
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-orange-500/20"></div>
-        </div>
+          <motion.div
+            className="relative h-96 rounded-2xl overflow-hidden shadow-xl"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 border-2 border-dashed rounded-xl w-full h-full" />
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-orange-500/20"></div>
+          </motion.div>
 
         <div>
           <h1 className="text-3xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-orange-500 bg-clip-text text-transparent">
@@ -319,10 +324,15 @@ function WhatWeLookForSection() {
           </div>
         </div>
 
-        <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
-          <div className="absolute inset-0 bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" />
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-orange-500/20"></div>
-        </div>
+          <motion.div
+            className="relative h-96 rounded-2xl overflow-hidden shadow-xl"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 border-2 border-dashed rounded-xl w-full h-full" />
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-orange-500/20"></div>
+          </motion.div>
       </div>
     </motion.div>
   );
@@ -337,10 +347,15 @@ function ReadyToJoinSection({ setIsModalOpen }) {
       transition={{ duration: 0.6 }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
-          <div className="absolute inset-0 bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" />
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-orange-500/20"></div>
-        </div>
+          <motion.div
+            className="relative h-96 rounded-2xl overflow-hidden shadow-xl"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 border-2 border-dashed rounded-xl w-full h-full" />
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-orange-500/20"></div>
+          </motion.div>
 
         <div>
           <h1 className="text-3xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-orange-500 bg-clip-text text-transparent">
