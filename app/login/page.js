@@ -136,7 +136,7 @@ const AuthPage = () => {
                           type="email"
                           id="email"
                           placeholder="Email Address"
-                          className="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                          className="w-full pl-10 pr-4 py-3 dark:text-white/80 bg-white/50 dark:bg-gray-700/50 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                         />
                       </div>
                     </motion.div>
@@ -154,7 +154,7 @@ const AuthPage = () => {
                           type="password"
                           id="password"
                           placeholder="Password"
-                          className="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                          className="w-full pl-10 pr-4 py-3 dark:text-white/80 bg-white/50 dark:bg-gray-700/50 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                         />
                       </div>
                     </motion.div>
@@ -242,7 +242,7 @@ const AuthPage = () => {
                       <input
                         type="text"
                         placeholder="Full Name"
-                        className="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 
+                        className="w-full pl-10 pr-4 py-3 dark:text-white/80 bg-white/50 dark:bg-gray-700/50 
                                    border border-gray-300 dark:border-gray-600 rounded-lg 
                                    focus:outline-none focus:ring-2 focus:ring-indigo-500 
                                    focus:border-indigo-500"
@@ -256,7 +256,7 @@ const AuthPage = () => {
                       <input
                         type="email"
                         placeholder="Email Address"
-                        className="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 
+                        className="w-full pl-10 pr-4 py-3 dark:text-white/80 bg-white/50 dark:bg-gray-700/50 
                                    border border-gray-300 dark:border-gray-600 rounded-lg 
                                    focus:outline-none focus:ring-2 focus:ring-indigo-500 
                                    focus:border-indigo-500"
@@ -270,7 +270,7 @@ const AuthPage = () => {
                       <input
                         type="password"
                         placeholder="Password"
-                        className="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 
+                        className="w-full pl-10 pr-4 py-3 dark:text-white/80 bg-white/50 dark:bg-gray-700/50 
                                    border border-gray-300 dark:border-gray-600 rounded-lg 
                                    focus:outline-none focus:ring-2 focus:ring-indigo-500 
                                    focus:border-indigo-500"
@@ -284,7 +284,7 @@ const AuthPage = () => {
                       <input
                         type="password"
                         placeholder="Confirm Password"
-                        className="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 
+                        className="w-full pl-10 pr-4 py-3 dark:text-white/80 bg-white/50 dark:bg-gray-700/50 
                                    border border-gray-300 dark:border-gray-600 rounded-lg 
                                    focus:outline-none focus:ring-2 focus:ring-indigo-500 
                                    focus:border-indigo-500"
