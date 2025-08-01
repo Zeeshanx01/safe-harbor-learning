@@ -192,7 +192,7 @@ const AuthPage = () => {
                       className="text-center pt-4 border-t border-gray-200 dark:border-gray-700 mt-6"
                     >
                       <p className="text-gray-700 dark:text-gray-300 text-sm">
-                        Don't have an account?{' '}
+                        Don&apos;t have an account?{' '}
                         <button
                           onClick={handleToggle}
                           type="button"

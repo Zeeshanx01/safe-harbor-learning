@@ -394,7 +394,7 @@ function FinalCallToAction() {
         </h5>
         <p className="text-white/90 max-w-2xl mx-auto mb-8">
           At Cyber Courses, we believe education has the power to transform lives. Join us in creating a world
-          where knowledge knows no bounds and together let's inspire, innovate, and educate!
+          where knowledge knows no bounds and together let&apos;s inspire, innovate, and educate!
         </p>
         <motion.button
           whileHover={{ scale: 1.05 }}
