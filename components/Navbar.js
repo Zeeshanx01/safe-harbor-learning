@@ -120,8 +120,9 @@ export default function Navbar() {
             className="
     sm:p-2 rounded-full 
     bg-white dark:bg-gray-800
-    shadow-lg 
+    shadow-lg
     border border-gray-200 dark:border-gray-700
+    max-sm:shadow-none
     max-sm:bg-transparent max-sm:dark:bg-transparent
     max-sm:border-0 max-sm:dark:border-0
   "
@@ -144,6 +145,8 @@ export default function Navbar() {
   flex items-center gap-2 
   bg-gradient-to-r from-indigo-600 to-orange-500 text-white 
   px-4 sm:py-2 rounded-full shadow-lg 
+  
+    max-sm:shadow-none
   max-sm:bg-none max-sm:bg-transparent max-sm:border-0 
   max-sm:text-indigo-600 dark:max-sm:text-yellow-500
 "
@@ -163,6 +166,8 @@ export default function Navbar() {
     bg-white dark:bg-gray-800
     shadow-lg 
     border border-gray-200 dark:border-gray-700
+    
+    max-sm:shadow-none
     max-sm:bg-transparent max-sm:dark:bg-transparent
     max-sm:border-0 max-sm:dark:border-0 text-yellow-500"
             aria-label="Toggle menu"
