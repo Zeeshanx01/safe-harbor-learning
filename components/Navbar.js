@@ -40,19 +40,19 @@ export default function Navbar() {
               className="object-contain"
             />
           </div> */}
-          <div className="bg-gradient-to-r from-indigo-600 to-orange-500 p-2 rounded-lg">
-            <div className="bg-white dark:bg-gray-900 p-1 rounded">
-              <div className="w-10 h-10 bg-gray-200 rounded" />
+          <div className="bg-gradient-to-r from-indigo-600 to-orange-500 p-2 max-sm:p-1 rounded-lg">
+            <div className="bg-white dark:bg-gray-900 w-10 h-10 max-sm:w-8 max-sm:h-8 p-1 rounded">
+              {/* <div className="w-10 h-10 bg-gray-200 rounded" /> */}
             </div>
           </div>
-          <p className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-orange-500 bg-clip-text text-transparent">
+          <p className="text-2xl max-sm:text-lg font-bold bg-gradient-to-r from-indigo-600 to-orange-500 bg-clip-text text-transparent">
             Safe Harbor<span className="text-orange-500"> Learning</span>
           </p>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-5">
-          {[ 'About', 'Courses'].map((item) => (
+          {['About', 'Courses'].map((item) => (
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
@@ -112,12 +112,20 @@ export default function Navbar() {
         </div>
 
         {/* Right-aligned buttons */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center sm:gap-3">
           {/* Dark Mode Toggle */}
           <motion.button
             onClick={handleDarkModeToggle}
             whileTap={{ scale: 0.9 }}
-            className="p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700"
+            className="
+    sm:p-2 rounded-full 
+    bg-white dark:bg-gray-800
+    shadow-lg
+    border border-gray-200 dark:border-gray-700
+    max-sm:shadow-none
+    max-sm:bg-transparent max-sm:dark:bg-transparent
+    max-sm:border-0 max-sm:dark:border-0
+  "
             aria-label="Toggle dark mode"
           >
             {darkMode ? (
@@ -127,12 +135,23 @@ export default function Navbar() {
             )}
           </motion.button>
 
+
           {/* Login Button */}
           <Link href="/login">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-orange-500 text-white px-4 py-2 rounded-full shadow-lg"
+              className="
+  flex items-center gap-2 
+  bg-gradient-to-r from-indigo-600 to-orange-500 text-white 
+  px-4 sm:py-2 rounded-full shadow-lg 
+  
+    max-sm:shadow-none
+  max-sm:bg-none max-sm:bg-transparent max-sm:border-0 
+  max-sm:text-indigo-600 dark:max-sm:text-yellow-500
+"
+
+
             >
               <User size={18} />
               <span className="hidden sm:inline">Login</span>
@@ -143,7 +162,14 @@ export default function Navbar() {
           <motion.button
             onClick={() => setMenuOpen(!menuOpen)}
             whileTap={{ scale: 0.9 }}
-            className="lg:hidden p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-indigo-700 dark:text-yellow-500 shadow-lg border border-gray-200 dark:border-gray-700"
+            className="lg:hidden     sm:p-2 rounded-full 
+    bg-white dark:bg-gray-800
+    shadow-lg 
+    border border-gray-200 dark:border-gray-700
+    
+    max-sm:shadow-none
+    max-sm:bg-transparent max-sm:dark:bg-transparent
+    max-sm:border-0 max-sm:dark:border-0 text-yellow-500"
             aria-label="Toggle menu"
           >
             {menuOpen ? <X size={24} /> : <Menu size={24} />}

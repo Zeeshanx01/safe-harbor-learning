@@ -52,7 +52,7 @@ const About = () => {
           {[...Array(5)].map((_, i) => (
             <motion.div
               key={i}
-              animate={{ 
+              animate={{
                 x: [0, 100 * (i % 2 === 0 ? 1 : -1), 0],
                 y: [0, -100, 0],
                 rotate: [0, 360]
