@@ -52,7 +52,7 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-5">
-          {['Home', 'About', 'Courses'].map((item) => (
+          {[ 'About', 'Courses'].map((item) => (
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
