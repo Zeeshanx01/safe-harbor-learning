@@ -58,7 +58,7 @@ export default function Footer() {
                 </div>
               </div>
               <p className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-orange-500 bg-clip-text text-transparent">
-                Safe Harbor
+                CourseCrafters
               </p>
             </Link>
             <p className="text-gray-400 mb-6">
@@ -199,7 +199,7 @@ export default function Footer() {
       >
         <div className="max-w-7xl mx-auto px-4 relative z-20">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} <Link href="/" className="text-white font-medium hover:text-orange-500 transition">Safe Harbor Learning</Link>. All Rights Reserved.
+            &copy; {new Date().getFullYear()} <Link href="/" className="text-white font-medium hover:text-orange-500 transition">CourseCrafters</Link>. All Rights Reserved.
           </p>
           <p className="text-gray-500 text-xs mt-2 relative z-20">
             Designed with ❤️ by {' '}

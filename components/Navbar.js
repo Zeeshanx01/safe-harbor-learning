@@ -46,7 +46,7 @@ export default function Navbar() {
             </div>
           </div>
           <p className="text-2xl max-sm:text-lg font-bold bg-gradient-to-r from-indigo-600 to-orange-500 bg-clip-text text-transparent">
-            Safe Harbor<span className="text-orange-500"> Learning</span>
+            CourseCrafters<span className="text-orange-500"> Learning</span>
           </p>
         </Link>
 
